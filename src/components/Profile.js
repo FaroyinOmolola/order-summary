@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../index.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { detail } from "../actions/DetailsAction";
 
@@ -24,17 +24,20 @@ function Profile(props) {
 				<Container>
 					<Container>
 						<div className="top-bar d-flex  px-3 mb-4 justify-content-between">
-							<p className="pe-3">Phone Number: </p> <p> {info?.user?.phone}</p>
+							<p className="pe-3">Phone Number: </p>{" "}
+							<p> {info?.user?.phone}</p>
 						</div>
 					</Container>
 					<Container>
 						<div className="top-bar d-flex  px-3 mb-4  justify-content-between">
-							<p className="pe-3">About: </p> <p> {info?.user?.about}</p>
+							<p className="pe-3">About: </p>{" "}
+							<p> {info?.user?.about}</p>
 						</div>
 					</Container>
 					<Container>
 						<div className="top-bar d-flex  px-3 mb-4  justify-content-between">
-							<p className="pe-3">Address: </p> <p> {info?.user?.address}</p>
+							<p className="pe-3">Address: </p>{" "}
+							<p> {info?.user?.address}</p>
 						</div>
 					</Container>
 					<Container className="mb-4 ">

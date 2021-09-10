@@ -33,7 +33,10 @@ function Order(props) {
 				<div>
 					<Container>
 						<div className="top-bar">Ordered from</div>
-						<Card style={{ width: "100%" }} className="bg-light border-0">
+						<Card
+							style={{ width: "100%" }}
+							className="bg-light border-0"
+						>
 							<Row>
 								<Col sm={2}>
 									<Card.Img
@@ -44,15 +47,22 @@ function Order(props) {
 								</Col>
 								<Col sm={10}>
 									<Card.Body>
-										<Card.Title>{info?.restaurant?.name}</Card.Title>
+										<Card.Title>
+											{info?.restaurant?.name}
+										</Card.Title>
 										<Card.Text className="small">
-											<span>{info?.restaurant?.street}</span>
-											<br />
 											<span>
-												{info?.restaurant?.city} - {info?.restaurant?.state}
+												{info?.restaurant?.street}
 											</span>
 											<br />
-											<span>({info?.restaurant?.zipcode})</span>
+											<span>
+												{info?.restaurant?.city} -{" "}
+												{info?.restaurant?.state}
+											</span>
+											<br />
+											<span>
+												({info?.restaurant?.zipcode})
+											</span>
 										</Card.Text>
 									</Card.Body>
 								</Col>
@@ -64,23 +74,35 @@ function Order(props) {
 						<Row className="p-3">
 							{info?.items.map((item) => (
 								<Col key={item.name} className="mx-auto my-2">
-									<Card style={{ minWidth: "220px" }} className="">
+									<Card
+										style={{ minWidth: "220px" }}
+										className=""
+									>
 										<Card.Header className="pb-0 ">
 											<h5>{item.name}</h5>
-											<p className="small">{item.category}</p>
+											<p className="small">
+												{item.category}
+											</p>
 										</Card.Header>
 										<Card.Body>
-											<Card.Text>Quantity: {item.quantity}</Card.Text>
+											<Card.Text>
+												Quantity: {item.quantity}
+											</Card.Text>
 											<Card.Text>
 												Price: {item.currency}{" "}
-												{" " + item.price * item.quantity}
+												{" " +
+													item.price * item.quantity}
 											</Card.Text>
-											<Card.Text>Tax: {item.tax_pct}%</Card.Text>
+											<Card.Text>
+												Tax: {item.tax_pct}%
+											</Card.Text>
 										</Card.Body>
 										<Card.Footer>
 											Total: {item.currency}{" "}
 											{item.price * item.quantity +
-												(item.tax_pct / 100) * item.price * item.quantity}
+												(item.tax_pct / 100) *
+													item.price *
+													item.quantity}
 										</Card.Footer>
 									</Card>
 								</Col>
