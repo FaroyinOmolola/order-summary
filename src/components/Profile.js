@@ -12,7 +12,7 @@ function Profile(props) {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(detail(info));
-	}, [dispatch]);
+	}, [dispatch, info]);
 
 	return (
 		<div>

@@ -12,7 +12,7 @@ function Order(props) {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(detail(info));
-	}, [dispatch]);
+	}, [dispatch, info]);
 
 	const total = () => {
 		let _total = 0;
